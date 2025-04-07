@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Tools</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Security Tools</h1>
+    </header>
+    <main>
+        <section class="container">
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('encrypt')">Encrypt/Decrypt</div>
+                <div class="tab" onclick="showTab('sql')">SQL Injection Detector</div>
+            </div>
+
+            <!-- Encrypt/Decrypt Tab -->
+            <div id="encrypt" class="tab-content active">
+                <h2>Input</h2>
+                <textarea id="encryptInput" rows="4" placeholder="Enter text to encrypt or decrypt"></textarea>
+                <select id="method" onchange="toggleKeyInput()">
+                    <option value="base64">Base64</option>
+                    <option value="caesar">Caesar Cipher</option>
+                    <option value="md5">MD5 (Hash - Encrypt Only)</option>
+                    <option value="sha256">SHA-256 (Hash - Encrypt Only)</option>
+                </select>
+                <input type="number" id="shiftKey" class="key-input" placeholder="Shift (1-25)" min="1" max="25">
+                <div class="buttons">
+                    <button class="encrypt-btn" onclick="encrypt()">Encrypt</button>
+                    <button class="encrypt-btn" onclick="decrypt()">Decrypt</button>
+                </div>
+                <h2>Result</h2>
+                <div id="encryptResult"></div>
+            </div>
+
+            <!-- SQL Injection Detector Tab -->
+            <div id="sql" class="tab-content">
+                <h2>Input</h2>
+                <select id="mode" onchange="updatePlaceholder()">
+                    <option value="query">Query Tester</option>
+                    <option value="form">Form Input Tester</option>
+                </select>
+                <textarea id="sqlInput" rows="4" placeholder="Enter a SQL query (e.g., SELECT * FROM users WHERE id = '1' OR '1'='1')"></textarea>
+                <button class="analyze-btn" onclick="analyzeInput()">Analyze</button>
+                <div id="sqlResult"></div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

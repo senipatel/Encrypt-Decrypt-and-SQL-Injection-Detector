@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 4px 4px 0 0;
+}
+
+.tab.active {
+    background-color: white;
+    border-bottom: 2px solid #1e90ff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h1 { color: #333; }
+h2 { margin-top: 0; }
+
+#encrypt h2 { color: #1e90ff; }
+#sql h2 { color: #d32f2f; }
+
+textarea, input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea { resize: vertical; }
+.key-input { display: none; }
+
+.buttons { display: flex; gap: 10px; }
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.encrypt-btn { background-color: #1e90ff; flex: 1; }
+.encrypt-btn:hover { background-color: #4169e1; }
+.analyze-btn { background-color: #d32f2f; }
+.analyze-btn:hover { background-color: #b71c1c; }
+
+#encryptResult, #sqlResult {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#encryptResult { 
+    border: 1px solid #ccc; 
+    background-color: #f9f9f9; 
+    min-height: 50px; 
+}
+
+.error { 
+    color: #721c24; 
+    background-color: #f8d7da; 
+}
+
+.safe {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.warning {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+@media (max-width: 600px) {
+    .container { padding: 15px; }
+    .buttons { flex-direction: column; }
+    .tabs { flex-direction: column; }
+}
